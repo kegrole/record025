@@ -1,0 +1,74 @@
+# 校验规则配置（YAML 子集，由 quarantine.rules 解析）
+# on_fail: retry     -> 失败后可回源重取，超过 max_retries 仍失败则转永久坏进隔离区
+# on_fail: permanent -> 失败后直接进隔离区
+id_field: id
+max_retries: 2
+source: source.jsonl   # 回源取数的本地假数据源，相对本文件所在目录
+rules:
+  - id: id_required
+    field: id
+    check: required
+    on_fail: permanent
+  - id: name_required
+    field: name
+    check: required
+    on_fail: permanent
+  - id: email_required
+    field: email
+    check: required
+    on_fail: retry
+  - id: status_required
+    field: status
+    check: required
+    on_fail: retry
+  - id: amount_required
+    field: amount
+    check: required
+    on_fail: retry
+  - id: quantity_required
+    field: quantity
+    check: required
+    on_fail: retry
+  - id: amount_type
+    field: amount
+    check: type
+    type: number
+    on_fail: permanent
+  - id: quantity_type
+    field: quantity
+    check: type
+    type: integer
+    on_fail: permanent
+  - id: amount_range
+    field: amount
+    check: range
+    min: 0
+    max: 10000
+    on_fail: retry
+  - id: quantity_range
+    field: quantity
+    check: range
+    min: 1
+    max: 100
+    on_fail: permanent
+  - id: status_enum
+    field: status
+    check: enum
+    values: [active, pending, closed]
+    on_fail: retry
+  - id: end_after_start
+    check: cross
+    op: lt
+    fields: [start, end]
+    on_fail: retry
+  - id: total_matches_parts
+    check: sum_eq
+    field: total
+    sum_of: [subtotal, tax]
+    tolerance: 0.01
+    on_fail: retry
+  - id: email_format
+    field: email
+    check: regex
+    pattern: '^[^@\s]+@[^@\s]+\.[^@\s]+$'
+    on_fail: permanent

@@ -1,0 +1,5 @@
+{"id": "r011", "name": "user011", "email": "user011@example.com", "status": "closed", "amount": 407.5, "quantity": 12, "start": "2026-01-12", "end": "2026-02-12", "subtotal": 407.5, "tax": 40.75, "total": 448.25}
+{"id": "r012", "name": "user012", "email": "user012@example.com", "status": "active", "amount": 444.5, "quantity": 13, "start": "2026-01-13", "end": "2026-02-13", "subtotal": 444.5, "tax": 44.45, "total": 488.95}
+{"id": "r020", "name": "user020", "email": "user020@example.com", "status": "closed", "amount": 240.5, "quantity": 21, "start": "2026-01-21", "end": "2026-02-21", "subtotal": 240.5, "tax": 24.05, "total": 264.55}
+{"id": "r021", "name": "user021", "email": "user021@example.com", "status": "active", "amount": 277.5, "quantity": 22, "start": "2026-01-22", "end": "2026-02-22", "subtotal": 277.5, "tax": 27.75, "total": 305.25}
+{"id": "r031", "name": "user031", "email": "user031@example.com", "status": "pending", "amount": 147.5, "quantity": 32, "start": "2026-01-04", "end": "2026-02-04", "subtotal": 147.5, "tax": 14.75, "total": 162.25}

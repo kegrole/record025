@@ -1,0 +1,13 @@
+{
+  "duplicates": 2,
+  "quarantine": 3,
+  "retried_records": 5,
+  "retry_attempts": 5,
+  "rule_hits": {
+    "email_format": 1,
+    "name_required": 1,
+    "quantity_range": 1
+  },
+  "total": 100,
+  "valid": 95
+}
